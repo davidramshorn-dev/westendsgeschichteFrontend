@@ -20,14 +20,14 @@
     <script>
         document.getElementById("loadDataBtn").onclick = async () => {
             
-           const response = await fetch("https://google.de");
-          // const text = await response.text();
+           const response = await fetch("https://westendsgeschichte-backend.onrender.com/api/hello");
+          const text = await response.text();
 
-         document.getElementById("output").textContent = response;
+        // document.getElementById("output").textContent = response;
             
         // var text= "HIIIIIIIIIIIIIIIIER";
             
-       //  document.getElementById("output").textContent = text;
+       document.getElementById("output").textContent = text;
             //Quellübergreifende (Cross-Origin) Anfrage blockiert: Die Gleiche-Quelle-Regel verbietet das Lesen der externen Ressource auf https://google.de/. (Grund: CORS-Kopfzeile 'Access-Control-Allow-Origin' fehlt). Statuscode: 301.
         };
     </script>
