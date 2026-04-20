@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Westends Geschichte – Basic Frontend</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Westends Geschichte</h1>
+        <p>Willkommen auf der Basic-Frontend-Seite</p>
+    </header>
+
+    <main>
+        <button id="loadDataBtn">Daten vom Backend laden</button>
+        <pre id="output"></pre>
+    </main>
+
+    <script>
+        document.getElementById("loadDataBtn").onclick = async () => {
+            const response = await fetch("http://localhost:8080/api/hello");
+            const text = await response.text();
+            document.getElementById("output").textContent = text;
+        };
+    </script>
+
+</body>
+</html>
