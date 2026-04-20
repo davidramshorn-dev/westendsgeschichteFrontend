@@ -19,7 +19,7 @@
 
     <script>
         document.getElementById("loadDataBtn").onclick = async () => {
-            const response = await fetch("http://localhost:8080/api/hello");
+            const response = await fetch("https://westendsgeschichte-backend.onrender.com/api/hello");
             const text = await response.text();
             document.getElementById("output").textContent = text;
         };
