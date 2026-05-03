@@ -1,0 +1,89 @@
+html, body, #root { height: 100%; margin: 0; overflow: hidden; font-family:
+sans-serif; }
+.app-container { display: flex; flex-direction: column; height: 100vh; }
+
+.map-section { flex: 2; position: relative; border-bottom: 2px solid #333; }
+.leaflet-container { height: 100%; width: 100%; }
+
+.quiz-section {
+flex: 1; background: #fff; padding: 20px;
+text-align: center; box-shadow: 0 -4px 10px rgba(0,0,0,0.1); z-index: 5;
+}
+
+.year-bar {
+position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
+z-index: 1000; display: flex; gap: 10px;
+}
+.year-bar button {
+padding: 8px 15px; border-radius: 20px; border: 1px solid #ccc;
+background: white; cursor: pointer; font-weight: bold;
+}
+.year-bar button.active { background: #007bff; color: white; }
+
+.detail-overlay {
+position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+background: white; z-index: 2000; display: flex; flex-direction: column;
+}
+.close-x { align-self: flex-end; font-size: 30px; padding: 15px; border:
+none; background: none; cursor: pointer; }
+.detail-content { padding: 20px; overflow-y: auto; }
+.detail-img { width: 100%; border-radius: 8px; margin-bottom: 15px; }
+
+/* LILA MARKER FIX */
+.marker-lila {
+filter: hue-rotate(65deg) !important;
+}
+
+/* U-BAHN ICON FIX */
+/* Verhindert, dass Leaflet-Standard-Styles das quadratische Logo verzerren */
+.u-bahn-icon-fix {
+border: none !important;
+background: none !important;
+filter: none !important;
+}
+
+/* Animationen */
+@keyframes universalFadeIn {
+0% { opacity: 0; transform: translateY(10px); }
+100% { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-element {
+animation: universalFadeIn 0.6s ease-out forwards;
+opacity: 0;
+}
+
+/* U-Bahn Fix */
+.u-bahn-icon-fix {
+border: none !important;
+background: none !important;
+box-shadow: none !important;
+}
+
+/* Lila Marker */
+.marker-lila {
+filter: hue-rotate(65deg) brightness(0.9);
+}
+
+/* Layout */
+.detail-overlay {
+position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+background: white; z-index: 2000; display: flex; flex-direction: column;
+}
+
+.detail-img {
+width: 100%;
+border-radius: 8px;
+margin-bottom: 15px;
+min-height: 150px;
+background: #f0f0f0;
+}
+
+.delay-short { animation-delay: 0.2s; }
+.delay-long { animation-delay: 0.4s; }
+.quiz-start-btn { background: #28a745; color: white; padding: 10px 20px;
+border: none; border-radius: 5px; cursor: pointer; }
+.quiz-btns { display: flex; gap: 10px; justify-content: center; margin-top:
+10px; }
+.quiz-reset-btn { background: #dc3545; color: white; border: none; padding:
+5px 15px; border-radius: 5px; cursor: pointer; }
