@@ -5,6 +5,12 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import './style.css';
 
+// ReactDOM.createRoot(document.getElementById('root')).render(
+//   <React.StrictMode>
+//     <App />
+//   </React.StrictMode>
+// );
+
 // --- ICONS ---
 const standardIcon = L.icon({
 iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
