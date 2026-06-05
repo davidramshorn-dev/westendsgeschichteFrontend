@@ -3,6 +3,8 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 
+alert("Hallo, JavaScript läuft!");
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
