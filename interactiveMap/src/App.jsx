@@ -202,9 +202,7 @@ Quiz starten</button>
 <div className="quiz-active">
 <p>{activeQuestion.q}</p>
 <div className="quiz-btns">
-<button onClick={handleQuizJump}>Ort zeigen</button>
-<button className="quiz-reset-btn" onClick={() =>
-setActiveQuestion(null)}>X</button>
+<button onClick="window.location.href='../../quiz/fragen.html';">Ort zeigen</button>
 </div>
 </div>
 )}
