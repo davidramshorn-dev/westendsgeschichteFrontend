@@ -195,7 +195,7 @@ e.target.closePopup();
 {/* QUIZ-BEREICH */}
 <div className="quiz-section">
 <h3>Westend Challenge</h3>
-<button onClick={() => window.location.href = "https://andere-seite.de"}>
+<button onClick={() => window.location.href = "https://westendsgeschichtefrontend.onrender.com/quiz/Fragen.html"}>
   Quiz starten
 </button>
 </div>
