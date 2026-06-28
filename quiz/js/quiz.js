@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
     async function loadQuestions() {
         showLoading();
         try {
-            const response = await fetch('/api/question');
+            const response = await fetch('https://westendsgeschichte-3.onrender.com/api/question');
             if (!response.ok) throw new Error('Fehler beim Laden der Fragen.');
             
             questions = await response.json();
