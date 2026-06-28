@@ -195,17 +195,7 @@ e.target.closePopup();
 {/* QUIZ-BEREICH */}
 <div className="quiz-section">
 <h3>Westend Challenge</h3>
-{!activeQuestion ? (
-<button className="quiz-start-btn" onClick={startQuiz}>
-Quiz starten</button>
-) : (
-<div className="quiz-active">
-<p>{activeQuestion.q}</p>
-<div className="quiz-btns">
-<button onClick="window.location.href='../../quiz/fragen.html';">Ort zeigen</button>
-</div>
-</div>
-)}
+<button onClick="window.location.href='../../quiz/fragen.html';">Quiz starten</button>
 </div>
 </div>
 );
