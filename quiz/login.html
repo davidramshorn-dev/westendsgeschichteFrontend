@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizApp - Login</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    <main class="login-container glass-card animate-fade-in">
+        <h2>Willkommen zurück</h2>
+        <p class="subtitle">Bitte melde dich an, um das Quiz zu starten</p>
+        
+        <div id="error-container" class="error-message hidden"></div>
+
+        <form id="login-form">
+            <div class="input-group">
+                <label for="username">Benutzername</label>
+                <input type="text" id="username" required placeholder="Dein Username">
+            </div>
+            <div class="input-group">
+                <label for="password">Passwort</label>
+                <input type="password" id="password" required placeholder="••••••••">
+            </div>
+            <div class="button-group">
+                <button type="submit" class="btn btn-primary">Anmelden</button>
+                <button type="button" id="btn-cancel" class="btn btn-secondary">Abbrechen</button>
+            </div>
+        </form>
+    </main>
+    <script src="js/login.js" type="module"></script>
+</body>
+</html>

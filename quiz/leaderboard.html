@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizApp - Bestenliste</title>
+    <link rel="stylesheet" href="css/leaderboard.css">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    
+    <main class="leaderboard-container glass-card">
+        <header class="leaderboard-header">
+            <h1>Bestenliste</h1>
+            <button id="btn-back-quiz" class="btn btn-secondary">Neues Quiz</button>
+        </header>
+
+        <div id="loading-view" class="view-state">
+            <div class="spinner"></div>
+        </div>
+
+        <div id="error-view" class="view-state hidden">
+            <p id="error-text" class="error-box"></p>
+        </div>
+
+        <div id="leaderboard-view" class="view-state hidden">
+            <section class="podium-container">
+                <div class="podium-place second">
+                    <span class="medal">🥈</span>
+                    <div class="podium-card glass-card">
+                        <span id="top2-name" class="name">-</span>
+                        <span id="top2-score" class="score">- Pkt</span>
+                    </div>
+                </div>
+                <div class="podium-place first">
+                    <span class="medal">🥇</span>
+                    <div class="podium-card glass-card">
+                        <span id="top1-name" class="name">-</span>
+                        <span id="top1-score" class="score">- Pkt</span>
+                    </div>
+                </div>
+                <div class="podium-place third">
+                    <span class="medal">🥉</span>
+                    <div class="podium-card glass-card">
+                        <span id="top3-name" class="name">-</span>
+                        <span id="top3-score" class="score">- Pkt</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="table-container">
+                <table class="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>Rang</th>
+                            <th>Spieler</th>
+                            <th>Punkte</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboard-body">
+                        </tbody>
+                </table>
+            </section>
+        </div>
+    </main>
+
+    <script src="js/leaderboard.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+:root {
+    --primary: #4f46e5;
+    --secondary: rgba(255, 255, 255, 0.15);
+    --secondary-hover: rgba(255, 255, 255, 0.25);
+    --glass-bg: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --highlight: rgba(79, 70, 229, 0.25);
+    --highlight-border: #818cf8;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+
+body {
+    display: flex; justify-content: center; align-items: center;
+    min-height: 100vh; color: #fff; background-color: #0f172a;
+}
+
+.background-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url('../images/westend-map.png');
+    background-size: cover; background-position: center;
+    filter: blur(8px) brightness(0.35); z-index: -1;
+}
+
+.glass-card {
+    background: var(--glass-bg); backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px); border: 1px solid var(--glass-border);
+    border-radius: 24px; box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.leaderboard-container {
+    width: 90%; max-width: 700px; padding: 32px;
+}
+
+.leaderboard-header {
+    display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px;
+}
+
+/* Top 3 Podium */
+.podium-container {
+    display: flex; justify-content: center; align-items: flex-end; gap: 16px; margin-bottom: 40px; height: 180px;
+}
+
+.podium-place {
+    display: flex; flex-direction: column; align-items: center; flex: 1;
+}
+
+.medal { font-size: 2rem; margin-bottom: 6px; }
+
+.podium-card {
+    width: 100%; padding: 16px; text-align: center; display: flex; flex-direction: column; gap: 4px;
+}
+
+.first .podium-card { height: 120px; background: rgba(255, 215, 0, 0.15); border-color: rgba(255, 215, 0, 0.3); }
+.second .podium-card { height: 100px; background: rgba(192, 192, 192, 0.15); border-color: rgba(192, 192, 192, 0.3); }
+.third .podium-card { height: 90px; background: rgba(205, 127, 50, 0.15); border-color: rgba(205, 127, 50, 0.3); }
+
+.podium-place .name { font-weight: 600; font-size: 1.05rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 100%;}
+.podium-place .score { font-size: 0.9rem; opacity: 0.8; }
+
+/* Tabelle */
+.table-container { overflow-x: auto; }
+
+.leaderboard-table {
+    width: 100%; border-collapse: collapse; text-align: left;
+}
+
+.leaderboard-table th, .leaderboard-table td {
+    padding: 14px 18px; border-bottom: 1px solid var(--glass-border);
+}
+
+.leaderboard-table th {
+    font-size: 0.85rem; text-transform: uppercase; color: rgba(255,255,255,0.6); letter-spacing: 0.5px;
+}
+
+.leaderboard-table tbody tr {
+    transition: background 0.2s;
+}
+
+.leaderboard-table tbody tr:hover { background: rgba(255,255,255,0.03); }
+
+/* Highlight eigener User */
+.leaderboard-table tr.current-user {
+    background: var(--highlight) !important;
+    border: 1px solid var(--highlight-border);
+    font-weight: 600;
+}
+
+.btn {
+    padding: 10px 20px; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.2s;
+}
+.btn-secondary { background: var(--secondary); color: white; border: 1px solid var(--glass-border); }
+.btn-secondary:hover { background: var(--secondary-hover); }
+
+.spinner {
+    width: 40px; height: 40px; border: 4px solid rgba(255,255,255,0.1);
+    border-top-color: var(--primary); border-radius: 50%; margin: 40px auto; animation: spin 1s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.hidden { display: none !important; }
+
+@media (max-width: 500px) {
+    .podium-container { height: auto; flex-direction: column; align-items: center; }
+    .podium-place { width: 100%; }
+    .first .podium-card, .second .podium-card, .third .podium-card { height: auto; }
+}
