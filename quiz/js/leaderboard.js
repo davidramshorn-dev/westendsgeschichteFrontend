@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const errorView = document.getElementById('error-view');
     const errorText = document.getElementById('error-text');
     const leaderboardBody = document.getElementById('leaderboard-body');
-    const btnBackQuiz = document.getElementById('btn-back-quiz');
+    const btnBackMap = document.getElementById('btn-back-map');
 
     // Podium Elemente
     const top1Name = document.getElementById('top1-name');
@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const top3Name = document.getElementById('top3-name');
     const top3Score = document.getElementById('top3-score');
 
-    btnBackQuiz.addEventListener('click', () => {
-        window.location.href = 'Fragen.html';
+    btnBackMap.addEventListener('click', () => {
+        window.location.href = '../interactiveMap/index.html';
     });
 
     // ===================================================================
