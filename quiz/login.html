@@ -5,30 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QuizApp - Login</title>
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/quiz.css">
 </head>
 <body>
     <div class="background-overlay"></div>
     <main class="login-container glass-card animate-fade-in">
-        <h2>Willkommen zurück</h2>
-        <p class="subtitle">Bitte melde dich an, um das Quiz zu starten</p>
-        
+        <h2>Willkommen</h2>
+        <p class="subtitle">Bitte gib deinen Playertag ein</p>
+
         <div id="error-container" class="error-message hidden"></div>
 
         <form id="login-form">
             <div class="input-group">
-                <label for="username">Benutzername</label>
-                <input type="text" id="username" required placeholder="Dein Username">
-            </div>
-            <div class="input-group">
-                <label for="password">Passwort</label>
-                <input type="password" id="password" required placeholder="••••••••">
-            </div>
-            <div class="button-group">
-                <button type="submit" class="btn btn-primary">Anmelden</button>
-                <button type="button" id="btn-cancel" class="btn btn-secondary">Abbrechen</button>
+                <label for="username">PLAYERTAG</label>
+                <input type="text" id="playertag" required placeholder="Dein Playertag">
             </div>
         </form>
+        <button id="btn-to-leaderboard-name" class="btn btn-primary">Zum Leaderboard</button>
+        <button id="btn-to-leaderboard-anonym" class="btn btn-secundary">Anonym</button>
     </main>
-    <script src="js/login.js" type="module"></script>
+    <script src="js/quiz.js" type="module"></script>
 </body>
 </html>

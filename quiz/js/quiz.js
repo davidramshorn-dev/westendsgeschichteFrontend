@@ -22,7 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const progressBarFill = document.getElementById('progress-bar-fill');
     const finalScoreEl = document.getElementById('final-score');
     
-    const btnToLeaderboard = document.getElementById('btn-to-leaderboard');
+    const btnToSaveResult = document.getElementById('btn-to-saveResult');
+    const btnToLeaderboardName = document.getElementById('btn-to-leaderboard-name');
+    const btnToLeaderboardAnonym = document.getElementById('btn-to-leaderboard-anonym');
     const btnRestart = document.getElementById('btn-restart');
 
     // Initialisierung
@@ -41,8 +43,19 @@ document.addEventListener('DOMContentLoaded', () => {
             endView.classList.add('hidden');
             loadQuestions();
         });
-        btnToLeaderboard.addEventListener('click', () => {
+        btnToLeaderboardName.addEventListener('click', () => {
+            const playertag = document.getElementById('playertag').value;
+            saveResult(playertag);
             window.location.href = 'leaderboard.html';
+            
+        });
+        btnToLeaderboardAnonym.addEventListener('click', () => {
+            saveResult('Anonym');
+            window.location.href = 'leaderboard.html';
+
+        });
+        btnToSaveResult.addEventListener('click', () => {
+            window.location.href = 'login.html';
         });
     }
 
@@ -211,7 +224,6 @@ document.addEventListener('DOMContentLoaded', () => {
         quizView.classList.add('hidden');
         endView.classList.remove('hidden');
         finalScoreEl.textContent = score;
-        saveResult();
     }
 
     // ===================================================================
@@ -230,8 +242,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Falls sich die API ändert, muss ausschließlich dieser Bereich
     // angepasst werden.
     // ===================================================================
-    async function saveResult() {
-        const username = localStorage.getItem('quiz_username') || 'Anonymer Spieler';
+    async function saveResult(playertag) {
+        const username = playertag;
         
         try {
             await fetch('https://westendsgeschichte-3.onrender.com/api/leaderboard', {
