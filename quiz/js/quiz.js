@@ -234,7 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const username = localStorage.getItem('quiz_username') || 'Anonymer Spieler';
         
         try {
-            await fetch('await fetch('https://westendsgeschichte-3.onrender.com/api/leaderboard', {', {
+            await fetch('https://westendsgeschichte-3.onrender.com/api/leaderboard', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username: username, score: score })
