@@ -133,8 +133,19 @@ document.addEventListener('DOMContentLoaded', () => {
             questionText.textContent = currentQuestion.question;
             answersGrid.innerHTML = '';
 
+            // Antworten aus dem Backend übernehmen
+            const answers = [
+                currentQuestion.answer1,
+                currentQuestion.answer2,
+                currentQuestion.answer3
+            ];
+
+            // correctAnswer ist 1-3 -> für JavaScript 0-2 umwandeln
+            const correctIndex = currentQuestion.correctAnswer - 1;
+
             // Antworten mischen
-            const { shuffledList, newCorrectIndex } = shuffleAnswers(currentQuestion.answers, currentQuestion.correct);
+            const { shuffledList, newCorrectIndex } =
+                shuffleAnswers(answers, correctIndex);
 
             shuffledList.forEach((answerText, idx) => {
                 const card = document.createElement('button');
@@ -223,7 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const username = localStorage.getItem('quiz_username') || 'Anonymer Spieler';
         
         try {
-            await fetch('/api/leaderboard', {
+            await fetch('await fetch('https://westendsgeschichte-3.onrender.com/api/leaderboard', {', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username: username, score: score })
