@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const top3Score = document.getElementById('top3-score');
 
     btnBackMap.addEventListener('click', () => {
-        window.location.href = '../interactiveMap/index.html';
+        window.location.href = 'https://react-yxgjyh3n.stackblitz.io/';  //../interactiveMap/index.html
     });
 
     // ===================================================================
