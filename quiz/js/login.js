@@ -1,4 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
 
     const btnToLeaderboardName = document.getElementById('btn-to-leaderboard-name');
     const btnToLeaderboardAnonym = document.getElementById('btn-to-leaderboard-anonym');
@@ -15,8 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     });
 
-
-});
 // ===================================================================
 // BACKEND-SCHNITTSTELLE
 //
