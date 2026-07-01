@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const top3Score = document.getElementById('top3-score');
 
     btnBackQuiz.addEventListener('click', () => {
-        window.location.href = 'fragen.html';
+        window.location.href = 'Fragen.html';
     });
 
     // ===================================================================
