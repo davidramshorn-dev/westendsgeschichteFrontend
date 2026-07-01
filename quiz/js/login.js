@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // angepasst werden.
         // ===================================================================
         try {
-            const response = await fetch('/api/login', {
+            const response = await fetch('https://westendsgeschichte-3.onrender.com/api/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password })

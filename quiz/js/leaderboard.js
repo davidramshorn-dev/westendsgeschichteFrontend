@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ===================================================================
     async function fetchLeaderboard() {
         try {
-            const response = await fetch('/api/leaderboard');
+            const response = await fetch('https://westendsgeschichte-3.onrender.com/api/leaderboard');
             if (!response.ok) throw new Error();
             
             const data = await response.json();
