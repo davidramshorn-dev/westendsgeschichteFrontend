@@ -23,8 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const finalScoreEl = document.getElementById('final-score');
     
     const btnToSaveResult = document.getElementById('btn-to-saveResult');
-    const btnToLeaderboardName = document.getElementById('btn-to-leaderboard-name');
-    const btnToLeaderboardAnonym = document.getElementById('btn-to-leaderboard-anonym');
     const btnRestart = document.getElementById('btn-restart');
 
     // Initialisierung
@@ -43,18 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
             endView.classList.add('hidden');
             loadQuestions();
         });
-        btnToLeaderboardName.addEventListener('click', () => {
-            const playertag = document.getElementById('playertag').value;
-            saveResult(playertag);
-            window.location.href = 'leaderboard.html';
-            
-        });
-        btnToLeaderboardAnonym.addEventListener('click', () => {
-            saveResult('Anonym');
-            window.location.href = 'leaderboard.html';
-
-        });
         btnToSaveResult.addEventListener('click', () => {
+            // Im LocalStorage unter dem Schlüssel 'meinDatenSchluessel' speichern
+            localStorage.setItem('score', score);
             window.location.href = 'login.html';
         });
     }
@@ -225,38 +214,6 @@ document.addEventListener('DOMContentLoaded', () => {
         endView.classList.remove('hidden');
         finalScoreEl.textContent = score;
     }
-
-    // ===================================================================
-    // BACKEND-SCHNITTSTELLE
-    //
-    // REST-Endpunkt:
-    // POST /api/leaderboard
-    //
-    // Übergibt als JSON-Body:
-    // { "username": "...", "score": 8 }
-    //
-    // Erwartete Antwort:
-    // HTTP Status 200 OK oder 201 Created
-    //
-    // Diese Daten stammen aus dem Spring-Boot-Backend.
-    // Falls sich die API ändert, muss ausschließlich dieser Bereich
-    // angepasst werden.
-    // ===================================================================
-    async function saveResult(playertag) {
-        const username = playertag;
-        
-        try {
-            await fetch('https://westendsgeschichte-3.onrender.com/api/leaderboard', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ username: username, score: score })
-            });
-        } catch (error) {
-            console.error('Ergebnis konnte nicht an das Leaderboard übermittelt werden:', error);
-        }
-    }
-    // ===================================================================
-
     function showError(msg) {
         loadingView.classList.add('hidden');
         quizView.classList.add('hidden');
