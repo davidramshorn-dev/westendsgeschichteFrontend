@@ -14,6 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const top3Name = document.getElementById('top3-name');
     const top3Score = document.getElementById('top3-score');
 
+    //Daten aktueller Spieler
+    const score = localStorage.getItem('score');
+    const currentUsername = localStorage.getItem('playertag');
+
     btnBackMap.addEventListener('click', () => {
         window.location.href = 'https://react-yxgjyh3n.stackblitz.io/';  //../interactiveMap/index.html
     });
@@ -54,8 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderLeaderboard(data) {
         loadingView.classList.add('hidden');
         leaderboardView.classList.remove('hidden');
-        
-        const currentUsername = localStorage.getItem('quiz_username');
 
         // 1. Top 3 Podium befüllen (wenn vorhanden)
         if (data[0]) {
@@ -77,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const tr = document.createElement('tr');
             
             // Eigener Rang farbig markiert / hervorgehoben (Vorgabe)
-            if (currentUsername && entry.username === currentUsername) {
+            if (entry.username === currentUsername && entry.score === score) {
                 tr.classList.add('current-user');
             }
 

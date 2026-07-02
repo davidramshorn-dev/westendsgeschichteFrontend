@@ -33,6 +33,7 @@ if (btnToLeaderboardName && btnToLeaderboardAnonym) {
 // ===================================================================
 async function saveResult(playertag) {
     const username = playertag;
+    localStorage.setItem('playertag', username);
 
     // Auslesen aus dem Speicher
     const scoreRaw = localStorage.getItem('score');
