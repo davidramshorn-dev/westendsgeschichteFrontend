@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const tr = document.createElement('tr');
             
             // Eigener Rang farbig markiert / hervorgehoben (Vorgabe)
-            if (entry.username === currentUsername && entry.score === score) {
+            if (entry.username === currentUsername) { //&& entry.score === score
                 tr.classList.add('current-user');
             }
 

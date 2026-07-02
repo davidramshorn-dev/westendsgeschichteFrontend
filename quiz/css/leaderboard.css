@@ -85,9 +85,19 @@ body {
     border: 1px solid var(--highlight-border);
     font-weight: 600;
 }
+.current-user {
+    background: var(--highlight) !important;
+    border: 1px solid var(--highlight-border);
+    font-weight: 600;
+}
 
 .btn {
-    padding: 10px 20px; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.2s;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
 }
 .btn-secondary { background: var(--secondary); color: white; border: 1px solid var(--glass-border); }
 .btn-secondary:hover { background: var(--secondary-hover); }
