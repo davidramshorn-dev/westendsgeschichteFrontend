@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             //Fragen auf 10 begrenzt
             if (i > 10) {
-                currentQuestionsPool.remove(i);
+                array.remove(i);
             }
         }
     }
